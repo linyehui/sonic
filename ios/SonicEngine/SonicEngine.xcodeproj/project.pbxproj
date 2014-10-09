@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3902B9DD18B4B1E30080E190 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3902B9DC18B4B1E30080E190 /* Foundation.framework */; };
+		3902B9EB18B4B1E40080E190 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3902B9EA18B4B1E40080E190 /* XCTest.framework */; };
+		3902B9EC18B4B1E40080E190 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3902B9DC18B4B1E30080E190 /* Foundation.framework */; };
+		3902B9EE18B4B1E40080E190 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3902B9ED18B4B1E40080E190 /* UIKit.framework */; };
+		3902B9F118B4B1E40080E190 /* libSonicEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3902B9D918B4B1E30080E190 /* libSonicEngine.a */; };
+		3902B9F718B4B1E40080E190 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3902B9F518B4B1E40080E190 /* InfoPlist.strings */; };
+		3902B9F918B4B1E40080E190 /* SonicEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3902B9F818B4B1E40080E190 /* SonicEngineTests.m */; };
+		3907271118F689B1009C6979 /* generator_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3907270F18F689B1009C6979 /* generator_helper.cpp */; };
+		3907271518F68B0F009C6979 /* listener_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3907271318F68B0F009C6979 /* listener_helper.cpp */; };
+		3924C8EA18EE4D5B00385459 /* SonicListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3924C8E718EE4D5B00385459 /* SonicListener.mm */; };
+		3924C8EB18EE4D5B00385459 /* SonicGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3924C8E918EE4D5B00385459 /* SonicGenerator.mm */; };
+		3924C96D18EE56CA00385459 /* FFTBufferManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C93818EE56CA00385459 /* FFTBufferManager.cpp */; };
+		3924C96E18EE56CA00385459 /* bb_freq_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C93B18EE56CA00385459 /* bb_freq_util.cpp */; };
+		3924C96F18EE56CA00385459 /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C94018EE56CA00385459 /* CADebugMacros.cpp */; };
+		3924C97018EE56CA00385459 /* CADebugPrintf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C94218EE56CA00385459 /* CADebugPrintf.cpp */; };
+		3924C97118EE56CA00385459 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C94518EE56CA00385459 /* CAStreamBasicDescription.cpp */; };
+		3924C97218EE56CA00385459 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C94718EE56CA00385459 /* CAXException.cpp */; };
+		3924C97718EE56CA00385459 /* VectorMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C95418EE56CA00385459 /* VectorMath.cpp */; };
+		3924C97818EE56CA00385459 /* kiss_fastfir.c in Sources */ = {isa = PBXBuildFile; fileRef = 3924C95818EE56CA00385459 /* kiss_fastfir.c */; };
+		3924C97918EE56CA00385459 /* kiss_fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 3924C95A18EE56CA00385459 /* kiss_fft.c */; };
+		3924C97A18EE56CA00385459 /* kiss_fftr.c in Sources */ = {isa = PBXBuildFile; fileRef = 3924C95C18EE56CA00385459 /* kiss_fftr.c */; };
+		3924C97B18EE56CA00385459 /* pcm_render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C95F18EE56CA00385459 /* pcm_render.cpp */; };
+		3924C97D18EE56CA00385459 /* queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C96518EE56CA00385459 /* queue.cpp */; };
+		3924C97E18EE56CA00385459 /* rscode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3924C96818EE56CA00385459 /* rscode.cpp */; };
+		39792A4718F3EB2400F022F1 /* SonicListener.h in Copy Files (5 items) */ = {isa = PBXBuildFile; fileRef = 3924C8E618EE4D5B00385459 /* SonicListener.h */; };
+		39792A4818F3EB2400F022F1 /* SonicGenerator.h in Copy Files (5 items) */ = {isa = PBXBuildFile; fileRef = 3924C8E818EE4D5B00385459 /* SonicGenerator.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3902B9EF18B4B1E40080E190 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3902B9D118B4B1E30080E190 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3902B9D818B4B1E30080E190;
+			remoteInfo = SonicEngine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3902B9D718B4B1E30080E190 /* Copy Files (5 items) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				39792A4718F3EB2400F022F1 /* SonicListener.h in Copy Files (5 items) */,
+				39792A4818F3EB2400F022F1 /* SonicGenerator.h in Copy Files (5 items) */,
+			);
+			name = "Copy Files (5 items)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3902B9D918B4B1E30080E190 /* libSonicEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSonicEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3902B9DC18B4B1E30080E190 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3902B9E018B4B1E30080E190 /* SonicEngine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SonicEngine-Prefix.pch"; sourceTree = "<group>"; };
+		3902B9E918B4B1E40080E190 /* SonicEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SonicEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3902B9EA18B4B1E40080E190 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3902B9ED18B4B1E40080E190 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3902B9F418B4B1E40080E190 /* SonicEngineTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SonicEngineTests-Info.plist"; sourceTree = "<group>"; };
+		3902B9F618B4B1E40080E190 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3902B9F818B4B1E40080E190 /* SonicEngineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SonicEngineTests.m; sourceTree = "<group>"; };
+		3907270F18F689B1009C6979 /* generator_helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = generator_helper.cpp; sourceTree = "<group>"; };
+		3907271018F689B1009C6979 /* generator_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = generator_helper.h; sourceTree = "<group>"; };
+		3907271318F68B0F009C6979 /* listener_helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = listener_helper.cpp; sourceTree = "<group>"; };
+		3907271418F68B0F009C6979 /* listener_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listener_helper.h; sourceTree = "<group>"; };
+		3924C8E618EE4D5B00385459 /* SonicListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SonicListener.h; sourceTree = "<group>"; };
+		3924C8E718EE4D5B00385459 /* SonicListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SonicListener.mm; sourceTree = "<group>"; };
+		3924C8E818EE4D5B00385459 /* SonicGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SonicGenerator.h; sourceTree = "<group>"; };
+		3924C8E918EE4D5B00385459 /* SonicGenerator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SonicGenerator.mm; sourceTree = "<group>"; };
+		3924C93818EE56CA00385459 /* FFTBufferManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FFTBufferManager.cpp; sourceTree = "<group>"; };
+		3924C93918EE56CA00385459 /* FFTBufferManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTBufferManager.h; sourceTree = "<group>"; };
+		3924C93B18EE56CA00385459 /* bb_freq_util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bb_freq_util.cpp; sourceTree = "<group>"; };
+		3924C93C18EE56CA00385459 /* bb_freq_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bb_freq_util.h; sourceTree = "<group>"; };
+		3924C93D18EE56CA00385459 /* bb_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bb_header.h; sourceTree = "<group>"; };
+		3924C93F18EE56CA00385459 /* CABitOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CABitOperations.h; sourceTree = "<group>"; };
+		3924C94018EE56CA00385459 /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
+		3924C94118EE56CA00385459 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		3924C94218EE56CA00385459 /* CADebugPrintf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugPrintf.cpp; sourceTree = "<group>"; };
+		3924C94318EE56CA00385459 /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugPrintf.h; sourceTree = "<group>"; };
+		3924C94418EE56CA00385459 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		3924C94518EE56CA00385459 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		3924C94618EE56CA00385459 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		3924C94718EE56CA00385459 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		3924C94818EE56CA00385459 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		3924C94918EE56CA00385459 /* CFByteOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFByteOrder.h; sourceTree = "<group>"; };
+		3924C94A18EE56CA00385459 /* CoreAudioTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAudioTypes.h; sourceTree = "<group>"; };
+		3924C95418EE56CA00385459 /* VectorMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorMath.cpp; sourceTree = "<group>"; };
+		3924C95518EE56CA00385459 /* VectorMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorMath.h; sourceTree = "<group>"; };
+		3924C95718EE56CA00385459 /* _kiss_fft_guts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _kiss_fft_guts.h; sourceTree = "<group>"; };
+		3924C95818EE56CA00385459 /* kiss_fastfir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kiss_fastfir.c; sourceTree = "<group>"; };
+		3924C95918EE56CA00385459 /* kiss_fastfir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kiss_fastfir.h; sourceTree = "<group>"; };
+		3924C95A18EE56CA00385459 /* kiss_fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kiss_fft.c; sourceTree = "<group>"; };
+		3924C95B18EE56CA00385459 /* kiss_fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kiss_fft.h; sourceTree = "<group>"; };
+		3924C95C18EE56CA00385459 /* kiss_fftr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kiss_fftr.c; sourceTree = "<group>"; };
+		3924C95D18EE56CA00385459 /* kiss_fftr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kiss_fftr.h; sourceTree = "<group>"; };
+		3924C95F18EE56CA00385459 /* pcm_render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pcm_render.cpp; sourceTree = "<group>"; };
+		3924C96018EE56CA00385459 /* pcm_render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcm_render.h; sourceTree = "<group>"; };
+		3924C96518EE56CA00385459 /* queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = queue.cpp; sourceTree = "<group>"; };
+		3924C96618EE56CA00385459 /* queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
+		3924C96818EE56CA00385459 /* rscode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rscode.cpp; sourceTree = "<group>"; };
+		3924C96918EE56CA00385459 /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3902B9D618B4B1E30080E190 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3902B9DD18B4B1E30080E190 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3902B9E618B4B1E40080E190 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3902B9F118B4B1E40080E190 /* libSonicEngine.a in Frameworks */,
+				3902B9EB18B4B1E40080E190 /* XCTest.framework in Frameworks */,
+				3902B9EE18B4B1E40080E190 /* UIKit.framework in Frameworks */,
+				3902B9EC18B4B1E40080E190 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3902B9D018B4B1E30080E190 = {
+			isa = PBXGroup;
+			children = (
+				3924C93618EE56CA00385459 /* sdk */,
+				3902B9DE18B4B1E30080E190 /* SonicEngine */,
+				3902B9F218B4B1E40080E190 /* SonicEngineTests */,
+				3902B9DB18B4B1E30080E190 /* Frameworks */,
+				3902B9DA18B4B1E30080E190 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3902B9DA18B4B1E30080E190 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3902B9D918B4B1E30080E190 /* libSonicEngine.a */,
+				3902B9E918B4B1E40080E190 /* SonicEngineTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3902B9DB18B4B1E30080E190 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3902B9DC18B4B1E30080E190 /* Foundation.framework */,
+				3902B9EA18B4B1E40080E190 /* XCTest.framework */,
+				3902B9ED18B4B1E40080E190 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3902B9DE18B4B1E30080E190 /* SonicEngine */ = {
+			isa = PBXGroup;
+			children = (
+				3924C8E618EE4D5B00385459 /* SonicListener.h */,
+				3924C8E718EE4D5B00385459 /* SonicListener.mm */,
+				3924C8E818EE4D5B00385459 /* SonicGenerator.h */,
+				3924C8E918EE4D5B00385459 /* SonicGenerator.mm */,
+				3902B9DF18B4B1E30080E190 /* Supporting Files */,
+			);
+			path = SonicEngine;
+			sourceTree = "<group>";
+		};
+		3902B9DF18B4B1E30080E190 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3902B9E018B4B1E30080E190 /* SonicEngine-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3902B9F218B4B1E40080E190 /* SonicEngineTests */ = {
+			isa = PBXGroup;
+			children = (
+				3902B9F818B4B1E40080E190 /* SonicEngineTests.m */,
+				3902B9F318B4B1E40080E190 /* Supporting Files */,
+			);
+			path = SonicEngineTests;
+			sourceTree = "<group>";
+		};
+		3902B9F318B4B1E40080E190 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3902B9F418B4B1E40080E190 /* SonicEngineTests-Info.plist */,
+				3902B9F518B4B1E40080E190 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3907270E18F689B1009C6979 /* generator_helper */ = {
+			isa = PBXGroup;
+			children = (
+				3907270F18F689B1009C6979 /* generator_helper.cpp */,
+				3907271018F689B1009C6979 /* generator_helper.h */,
+			);
+			path = generator_helper;
+			sourceTree = "<group>";
+		};
+		3907271218F68B0F009C6979 /* listener_helper */ = {
+			isa = PBXGroup;
+			children = (
+				3907271318F68B0F009C6979 /* listener_helper.cpp */,
+				3907271418F68B0F009C6979 /* listener_helper.h */,
+			);
+			path = listener_helper;
+			sourceTree = "<group>";
+		};
+		3924C93618EE56CA00385459 /* sdk */ = {
+			isa = PBXGroup;
+			children = (
+				3907271218F68B0F009C6979 /* listener_helper */,
+				3907270E18F689B1009C6979 /* generator_helper */,
+				3924C93718EE56CA00385459 /* FFTBufferManager */,
+				3924C93A18EE56CA00385459 /* freq_util */,
+				3924C93E18EE56CA00385459 /* iPublicUtility */,
+				3924C95618EE56CA00385459 /* kiss_fft */,
+				3924C95E18EE56CA00385459 /* pcm_render */,
+				3924C96418EE56CA00385459 /* queue */,
+				3924C96718EE56CA00385459 /* rscode */,
+			);
+			name = sdk;
+			path = ../../sdk;
+			sourceTree = "<group>";
+		};
+		3924C93718EE56CA00385459 /* FFTBufferManager */ = {
+			isa = PBXGroup;
+			children = (
+				3924C93818EE56CA00385459 /* FFTBufferManager.cpp */,
+				3924C93918EE56CA00385459 /* FFTBufferManager.h */,
+			);
+			path = FFTBufferManager;
+			sourceTree = "<group>";
+		};
+		3924C93A18EE56CA00385459 /* freq_util */ = {
+			isa = PBXGroup;
+			children = (
+				3924C93B18EE56CA00385459 /* bb_freq_util.cpp */,
+				3924C93C18EE56CA00385459 /* bb_freq_util.h */,
+				3924C93D18EE56CA00385459 /* bb_header.h */,
+			);
+			path = freq_util;
+			sourceTree = "<group>";
+		};
+		3924C93E18EE56CA00385459 /* iPublicUtility */ = {
+			isa = PBXGroup;
+			children = (
+				3924C93F18EE56CA00385459 /* CABitOperations.h */,
+				3924C94018EE56CA00385459 /* CADebugMacros.cpp */,
+				3924C94118EE56CA00385459 /* CADebugMacros.h */,
+				3924C94218EE56CA00385459 /* CADebugPrintf.cpp */,
+				3924C94318EE56CA00385459 /* CADebugPrintf.h */,
+				3924C94418EE56CA00385459 /* CAMath.h */,
+				3924C94518EE56CA00385459 /* CAStreamBasicDescription.cpp */,
+				3924C94618EE56CA00385459 /* CAStreamBasicDescription.h */,
+				3924C94718EE56CA00385459 /* CAXException.cpp */,
+				3924C94818EE56CA00385459 /* CAXException.h */,
+				3924C94918EE56CA00385459 /* CFByteOrder.h */,
+				3924C94A18EE56CA00385459 /* CoreAudioTypes.h */,
+				3924C95418EE56CA00385459 /* VectorMath.cpp */,
+				3924C95518EE56CA00385459 /* VectorMath.h */,
+			);
+			path = iPublicUtility;
+			sourceTree = "<group>";
+		};
+		3924C95618EE56CA00385459 /* kiss_fft */ = {
+			isa = PBXGroup;
+			children = (
+				3924C95718EE56CA00385459 /* _kiss_fft_guts.h */,
+				3924C95818EE56CA00385459 /* kiss_fastfir.c */,
+				3924C95918EE56CA00385459 /* kiss_fastfir.h */,
+				3924C95A18EE56CA00385459 /* kiss_fft.c */,
+				3924C95B18EE56CA00385459 /* kiss_fft.h */,
+				3924C95C18EE56CA00385459 /* kiss_fftr.c */,
+				3924C95D18EE56CA00385459 /* kiss_fftr.h */,
+			);
+			path = kiss_fft;
+			sourceTree = "<group>";
+		};
+		3924C95E18EE56CA00385459 /* pcm_render */ = {
+			isa = PBXGroup;
+			children = (
+				3924C95F18EE56CA00385459 /* pcm_render.cpp */,
+				3924C96018EE56CA00385459 /* pcm_render.h */,
+			);
+			path = pcm_render;
+			sourceTree = "<group>";
+		};
+		3924C96418EE56CA00385459 /* queue */ = {
+			isa = PBXGroup;
+			children = (
+				3924C96518EE56CA00385459 /* queue.cpp */,
+				3924C96618EE56CA00385459 /* queue.h */,
+			);
+			path = queue;
+			sourceTree = "<group>";
+		};
+		3924C96718EE56CA00385459 /* rscode */ = {
+			isa = PBXGroup;
+			children = (
+				3924C96818EE56CA00385459 /* rscode.cpp */,
+				3924C96918EE56CA00385459 /* rscode.h */,
+			);
+			path = rscode;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3902B9D818B4B1E30080E190 /* SonicEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3902B9FC18B4B1E40080E190 /* Build configuration list for PBXNativeTarget "SonicEngine" */;
+			buildPhases = (
+				3902B9D518B4B1E30080E190 /* Sources */,
+				3902B9D618B4B1E30080E190 /* Frameworks */,
+				3902B9D718B4B1E30080E190 /* Copy Files (5 items) */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SonicEngine;
+			productName = SonicEngine;
+			productReference = 3902B9D918B4B1E30080E190 /* libSonicEngine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3902B9E818B4B1E40080E190 /* SonicEngineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3902B9FF18B4B1E40080E190 /* Build configuration list for PBXNativeTarget "SonicEngineTests" */;
+			buildPhases = (
+				3902B9E518B4B1E40080E190 /* Sources */,
+				3902B9E618B4B1E40080E190 /* Frameworks */,
+				3902B9E718B4B1E40080E190 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3902B9F018B4B1E40080E190 /* PBXTargetDependency */,
+			);
+			name = SonicEngineTests;
+			productName = SonicEngineTests;
+			productReference = 3902B9E918B4B1E40080E190 /* SonicEngineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3902B9D118B4B1E30080E190 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = linyehui;
+			};
+			buildConfigurationList = 3902B9D418B4B1E30080E190 /* Build configuration list for PBXProject "SonicEngine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3902B9D018B4B1E30080E190;
+			productRefGroup = 3902B9DA18B4B1E30080E190 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3902B9D818B4B1E30080E190 /* SonicEngine */,
+				3902B9E818B4B1E40080E190 /* SonicEngineTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3902B9E718B4B1E40080E190 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3902B9F718B4B1E40080E190 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3902B9D518B4B1E30080E190 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3924C97018EE56CA00385459 /* CADebugPrintf.cpp in Sources */,
+				3924C8EB18EE4D5B00385459 /* SonicGenerator.mm in Sources */,
+				3907271518F68B0F009C6979 /* listener_helper.cpp in Sources */,
+				3924C97718EE56CA00385459 /* VectorMath.cpp in Sources */,
+				3924C97918EE56CA00385459 /* kiss_fft.c in Sources */,
+				3924C97B18EE56CA00385459 /* pcm_render.cpp in Sources */,
+				3924C8EA18EE4D5B00385459 /* SonicListener.mm in Sources */,
+				3924C97A18EE56CA00385459 /* kiss_fftr.c in Sources */,
+				3924C96D18EE56CA00385459 /* FFTBufferManager.cpp in Sources */,
+				3907271118F689B1009C6979 /* generator_helper.cpp in Sources */,
+				3924C97E18EE56CA00385459 /* rscode.cpp in Sources */,
+				3924C97818EE56CA00385459 /* kiss_fastfir.c in Sources */,
+				3924C97D18EE56CA00385459 /* queue.cpp in Sources */,
+				3924C97218EE56CA00385459 /* CAXException.cpp in Sources */,
+				3924C96F18EE56CA00385459 /* CADebugMacros.cpp in Sources */,
+				3924C96E18EE56CA00385459 /* bb_freq_util.cpp in Sources */,
+				3924C97118EE56CA00385459 /* CAStreamBasicDescription.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3902B9E518B4B1E40080E190 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3902B9F918B4B1E40080E190 /* SonicEngineTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3902B9F018B4B1E40080E190 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3902B9D818B4B1E30080E190 /* SonicEngine */;
+			targetProxy = 3902B9EF18B4B1E40080E190 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3902B9F518B4B1E40080E190 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3902B9F618B4B1E40080E190 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3902B9FA18B4B1E40080E190 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					SONIC_TARGET_OS_IOS,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3902B9FB18B4B1E40080E190 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = SONIC_TARGET_OS_IOS;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3902B9FD18B4B1E40080E190 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DSTROOT = /tmp/SonicEngine.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SonicEngine/SonicEngine-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3902B9FE18B4B1E40080E190 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DSTROOT = /tmp/SonicEngine.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SonicEngine/SonicEngine-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3902BA0018B4B1E40080E190 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SonicEngine/SonicEngine-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SonicEngineTests/SonicEngineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3902BA0118B4B1E40080E190 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SonicEngine/SonicEngine-Prefix.pch";
+				INFOPLIST_FILE = "SonicEngineTests/SonicEngineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3902B9D418B4B1E30080E190 /* Build configuration list for PBXProject "SonicEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3902B9FA18B4B1E40080E190 /* Debug */,
+				3902B9FB18B4B1E40080E190 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3902B9FC18B4B1E40080E190 /* Build configuration list for PBXNativeTarget "SonicEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3902B9FD18B4B1E40080E190 /* Debug */,
+				3902B9FE18B4B1E40080E190 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3902B9FF18B4B1E40080E190 /* Build configuration list for PBXNativeTarget "SonicEngineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3902BA0018B4B1E40080E190 /* Debug */,
+				3902BA0118B4B1E40080E190 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3902B9D118B4B1E30080E190 /* Project object */;
+}

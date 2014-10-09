@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sonic</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Sonic</string>
+	<string name="button_generate">Generate Wave and Play</string>
+	<string name="button_start_listening">Start Listening</string>
+	<string name="button_stop_listening">Stop Listening</string>
+</resources>
