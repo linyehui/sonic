@@ -29,3 +29,8 @@ android-ndk-r9d
 iOS 和 Android Demo非常简陋，可以在两部设备上相互发送声波并识别，但交互上还有很多已知和未知的Bug :(
 
 ### 希望这份代码能给你带来些许帮助。
+
+### Any questions, please feel free to send me an email: 
+```bash
+echo qwertyuwitotepasdwqifgs | tr qeryuoasdfgipwt lnyhudgmaco.@ie
+```
