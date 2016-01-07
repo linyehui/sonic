@@ -134,7 +134,7 @@ void vclip(const float* sourceP, int sourceStride, const float* lowThresholdP, c
 
 void vsma(const float* sourceP, int sourceStride, const float* scale, float* destP, int destStride, size_t framesToProcess)
 {
-    int n = framesToProcess;
+    size_t n = framesToProcess;
 
 #if 1 == __SSE2__
     if ((sourceStride == 1) && (destStride == 1)) {
@@ -207,7 +207,7 @@ void vsma(const float* sourceP, int sourceStride, const float* scale, float* des
 
 void vsmul(const float* sourceP, int sourceStride, const float* scale, float* destP, int destStride, size_t framesToProcess)
 {
-    int n = framesToProcess;
+    size_t n = framesToProcess;
 
 #if 1 == __SSE2__
     if ((sourceStride == 1) && (destStride == 1)) {
@@ -299,7 +299,7 @@ void vsadd(const float* sourceP, int sourceStride, const float* scale, float* de
 {
     // add by linyehui 2014-03-28 11:30
     // 大学数学没学好，算法优化真心不懂，先用最简单的实现
-    int n = framesToProcess;
+    size_t n = framesToProcess;
     
     float k = *scale;
     while (n--) {
@@ -313,7 +313,7 @@ void zvmags(const float* sourceRe, const float* sourceIm, int sourceStride, floa
 {
     // add by linyehui 2014-03-28 11:30
     // 大学数学没学好，算法优化真心不懂，先用最简单的实现
-    int n = framesToProcess;
+    size_t n = framesToProcess;
     while (n--) {
         *destP = (*sourceRe * *sourceRe) + (*sourceIm * *sourceIm);
         sourceRe += sourceStride;
@@ -328,7 +328,7 @@ void vdbcon(const float* sourceP, int sourceStride, const float* scale, float* d
     //Performs the following operation. α is 20 if F is 1, or 10 if F is 0.
     int alpha = (1 == flag) ? 20 : 10;
     
-    int n = framesToProcess;
+    size_t n = framesToProcess;
     while (n--) {
         *destP = alpha * log10f(*sourceP / *scale);
         sourceP += sourceStride;
@@ -338,7 +338,7 @@ void vdbcon(const float* sourceP, int sourceStride, const float* scale, float* d
     
 void vadd(const float* source1P, int sourceStride1, const float* source2P, int sourceStride2, float* destP, int destStride, size_t framesToProcess)
 {
-    int n = framesToProcess;
+    size_t n = framesToProcess;
 
 #if 1 == __SSE2__
     if ((sourceStride1 ==1) && (sourceStride2 == 1) && (destStride == 1)) {
@@ -451,7 +451,7 @@ void vadd(const float* source1P, int sourceStride1, const float* source2P, int s
 void vmul(const float* source1P, int sourceStride1, const float* source2P, int sourceStride2, float* destP, int destStride, size_t framesToProcess)
 {
 
-    int n = framesToProcess;
+    size_t n = framesToProcess;
 
 #if 1 == __SSE2__
     if ((sourceStride1 == 1) && (sourceStride2 == 1) && (destStride == 1)) {
@@ -581,7 +581,7 @@ void zvmul(const float* real1P, const float* imag1P, const float* real2P, const 
 
 void vsvesq(const float* sourceP, int sourceStride, float* sumP, size_t framesToProcess)
 {
-    int n = framesToProcess;
+    size_t n = framesToProcess;
     float sum = 0;
 
 #if 1 == __SSE2__
@@ -646,7 +646,7 @@ void vsvesq(const float* sourceP, int sourceStride, float* sumP, size_t framesTo
 
 void vmaxmgv(const float* sourceP, int sourceStride, float* maxP, size_t framesToProcess)
 {
-    int n = framesToProcess;
+    size_t n = framesToProcess;
     float max = 0;
 
 #if 1 == __SSE2__
@@ -715,7 +715,7 @@ void vmaxmgv(const float* sourceP, int sourceStride, float* maxP, size_t framesT
 
 void vclip(const float* sourceP, int sourceStride, const float* lowThresholdP, const float* highThresholdP, float* destP, int destStride, size_t framesToProcess)
 {
-    int n = framesToProcess;
+    size_t n = framesToProcess;
     float lowThreshold = *lowThresholdP;
     float highThreshold = *highThresholdP;
 
