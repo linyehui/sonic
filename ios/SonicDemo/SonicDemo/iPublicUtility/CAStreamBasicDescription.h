@@ -51,13 +51,13 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 #ifndef __CAStreamBasicDescription_h__
 #define __CAStreamBasicDescription_h__
 
-//#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
-//	#include <CoreAudio/CoreAudioTypes.h>
+#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
+	#include <CoreAudio/CoreAudioTypes.h>
 //	#include <CoreFoundation/CoreFoundation.h>
-//#else
+#else
 	#include "CoreAudioTypes.h"
 //	#include "CoreFoundation.h"
-//#endif
+#endif
 
 #include "CADebugMacros.h"
 #include <string.h>	// for memset, memcpy

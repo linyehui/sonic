@@ -54,11 +54,11 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 //	Includes
 //=============================================================================
 
-//#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
-//	#include <CoreAudio/CoreAudioTypes.h>
-//#else
+#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
+	#include <CoreAudio/CoreAudioTypes.h>
+#else
 	#include "CoreAudioTypes.h"
-//#endif
+#endif
 
 //=============================================================================
 //	CADebugMacros

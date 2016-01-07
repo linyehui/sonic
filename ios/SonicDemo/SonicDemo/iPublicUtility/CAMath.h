@@ -50,11 +50,11 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
 #ifndef __CAMath_h__
 #define __CAMath_h__
 
-//#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
-//	#include <CoreAudio/CoreAudioTypes.h>
-//#else
+#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
+	#include <CoreAudio/CoreAudioTypes.h>
+#else
 	#include "CoreAudioTypes.h"
-//#endif
+#endif
 
 inline bool fiszero(double f) { return (f == 0.); }
 inline bool fiszero(float f) { return (f == 0.f); }
