@@ -31,27 +31,29 @@ const int BYTE_PER_SAMPLE = sizeof(short);
 
 //wav文件格式详见：http://www-mmsp.ece.mcgill.ca/Documents../AudioFormats/WAVE/WAVE.html
 //wav头的结构如下所示：
+#pragma pack(1)
 typedef   struct   {
-    char         fccID[4];//"RIFF"标志
-    unsigned   long       dwSize;//文件长度
-    char         fccType[4];//"WAVE"标志
+    char         	fccID[4];	//"RIFF"标志
+    unsigned int	dwSize;		//文件长度
+    char         	fccType[4];	//"WAVE"标志
 }HEADER;
 
 typedef   struct   {
-    char         fccID[4];//"fmt"标志
-    unsigned   long       dwSize;//Chunk size: 16
-    unsigned   short     wFormatTag;// 格式类别
-    unsigned   short     wChannels;//声道数
-    unsigned   long       dwSamplesPerSec;//采样频率
-    unsigned   long       dwAvgBytesPerSec;//位速  sample_rate * 2 * chans//为什么乘2呢？因为此时是16位的PCM数据，一个采样占两个byte。
-    unsigned   short     wBlockAlign;//一个采样多声道数据块大小
-    unsigned   short     uiBitsPerSample;//一个采样占的bit数
+    char				fccID[4];			//"fmt"标志
+    unsigned int      	dwSize;				//Chunk size: 16
+    unsigned short     	wFormatTag;			// 格式类别
+    unsigned short     	wChannels;			//声道数
+    unsigned int       	dwSamplesPerSec;	//采样频率
+    unsigned int       	dwAvgBytesPerSec;	//位速  sample_rate * 2 * chans//为什么乘2呢？因为此时是16位的PCM数据，一个采样占两个byte。
+    unsigned short     	wBlockAlign;		//一个采样多声道数据块大小
+    unsigned short     	uiBitsPerSample;	//一个采样占的bit数
 }FMT;
 
 typedef   struct   {
-    char         fccID[4]; 	//数据标记符＂data＂
-    unsigned   long       dwSize;//语音数据的长度，比文件长度小36
+    char			fccID[4]; 	//数据标记符＂data＂
+    unsigned int	dwSize;		//语音数据的长度，比文件长度小36
 }DATA;
+#pragma pack()
 
 //添加wav头信息
 int addWAVHeader(unsigned char *buffer, int sample_rate, int BYTE_PER_SAMPLE, int channels, long dataByteSize)
