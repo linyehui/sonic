@@ -210,16 +210,21 @@ static OSStatus	PerformThru(
 - (void)setupListening
 {
     CFURLRef url = NULL;
-	try
-    {
+	try {
 		__weak WaveListener *weakSelf = self;
+		void *inClientData = (__bridge void*)weakSelf;
 
 		// Initialize and configure the audio session
-		XThrowIfError(AudioSessionInitialize(NULL, NULL, rioInterruptionListener, (__bridge void*)weakSelf), "couldn't initialize audio session");
+		OSStatus status = AudioSessionInitialize(NULL, NULL, rioInterruptionListener, inClientData);
+		if (status != kAudioSessionNoError && status != kAudioSessionAlreadyInitialized) {
+			NSLog(@"setupListening failed, %d", (int)status);
+			return;
+		}
+
         self.interruption = NO;
 		UInt32 audioCategory = kAudioSessionCategory_PlayAndRecord;
 		XThrowIfError(AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(audioCategory), &audioCategory), "couldn't set audio category");
-		XThrowIfError(AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, propListener, (__bridge void*)weakSelf), "couldn't set property listener");
+		XThrowIfError(AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, propListener, inClientData), "couldn't set property listener");
         
 		//Float32 preferredBufferSize = .0872;
         Float32 preferredBufferSize = .0873;
@@ -269,21 +274,24 @@ static OSStatus	PerformThru(
 - (void)startListening
 {
     //_isListening = YES;
-    
-#ifdef __IPHONE_8_0
-    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
-        
-        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
-            
-            if (!granted) {
-                
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"没有开启麦克风" message:@"请到[设置]->[隐私]->[麦克风]中开启" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-                [alertView show];
-            }
-            
-        }];
-    }
-#endif
+
+	if ([[AVAudioSession sharedInstance] respondsToSelector:@selector(requestRecordPermission:)]) {
+		[[AVAudioSession sharedInstance] performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
+			if (granted) {
+				// Microphone enabled code
+				NSLog(@"Microphone is enabled..");
+			} else {
+				// Microphone disabled code
+				NSLog(@"Microphone is disabled..");
+				UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"没有开启麦克风"
+																	message:@"请到[设置]->[隐私]->[麦克风]中开启"
+																   delegate:nil
+														  cancelButtonTitle:@"确定"
+														  otherButtonTitles:nil];
+				[alertView show];
+			}
+		}];
+	}
 	
 	// mute should be on at launch
 	self.mute = YES;
@@ -293,7 +301,7 @@ static OSStatus	PerformThru(
 
 	__weak WaveListener *weakSelf = self;
 	inputProc.inputProcRefCon = (__bridge void*)weakSelf;
-    
+
     [self setupListening];
 }
 
