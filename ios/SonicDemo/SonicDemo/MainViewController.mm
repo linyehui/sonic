@@ -32,8 +32,6 @@
 
 - (void)dealloc
 {
-    [super dealloc];
-    
     animationTimer = nil;
 }
 

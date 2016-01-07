@@ -41,7 +41,7 @@ void rioInterruptionListener(void *inClientData, UInt32 inInterruption)
     try {
         printf("Session interrupted! --- %s ---", inInterruption == kAudioSessionBeginInterruption ? "Begin Interruption" : "End Interruption");
         
-        WaveListener *THIS = (WaveListener *)inClientData;
+        WaveListener *THIS = (__bridge WaveListener *)inClientData;
         
         if (inInterruption == kAudioSessionEndInterruption) {
             // make sure we are again the active session
@@ -70,7 +70,7 @@ void propListener(	void *                  inClientData,
                   UInt32                  inDataSize,
                   const void *            inData)
 {
-	WaveListener *THIS = (WaveListener *)inClientData;
+	WaveListener *THIS = (__bridge WaveListener *)inClientData;
 	if (inID == kAudioSessionProperty_AudioRouteChange)
 	{
 		try {
@@ -153,7 +153,7 @@ static OSStatus	PerformThru(
 							UInt32 						inNumberFrames,
 							AudioBufferList 			*ioData)
 {
-	WaveListener *THIS = (WaveListener *)inRefCon;
+	WaveListener *THIS = (__bridge WaveListener *)inRefCon;
 	OSStatus err = AudioUnitRender(THIS->rioUnit, ioActionFlags, inTimeStamp, 1, inNumberFrames, ioData);
 	if (err)
     {
@@ -212,12 +212,14 @@ static OSStatus	PerformThru(
     CFURLRef url = NULL;
 	try
     {
+		__weak WaveListener *weakSelf = self;
+
 		// Initialize and configure the audio session
-		XThrowIfError(AudioSessionInitialize(NULL, NULL, rioInterruptionListener, self), "couldn't initialize audio session");
+		XThrowIfError(AudioSessionInitialize(NULL, NULL, rioInterruptionListener, (__bridge void*)weakSelf), "couldn't initialize audio session");
         self.interruption = NO;
 		UInt32 audioCategory = kAudioSessionCategory_PlayAndRecord;
 		XThrowIfError(AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(audioCategory), &audioCategory), "couldn't set audio category");
-		XThrowIfError(AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, propListener, self), "couldn't set property listener");
+		XThrowIfError(AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, propListener, (__bridge void*)weakSelf), "couldn't set property listener");
         
 		//Float32 preferredBufferSize = .0872;
         Float32 preferredBufferSize = .0873;
@@ -275,7 +277,7 @@ static OSStatus	PerformThru(
             
             if (!granted) {
                 
-                UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"没有开启麦克风" message:@"请到[设置]->[隐私]->[麦克风]中开启" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] autorelease];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"没有开启麦克风" message:@"请到[设置]->[隐私]->[麦克风]中开启" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
                 [alertView show];
             }
             
@@ -288,7 +290,9 @@ static OSStatus	PerformThru(
 
 	// Initialize our remote i/o unit
 	inputProc.inputProc = PerformThru;
-	inputProc.inputProcRefCon = self;
+
+	__weak WaveListener *weakSelf = self;
+	inputProc.inputProcRefCon = (__bridge void*)weakSelf;
     
     [self setupListening];
 }
@@ -316,8 +320,7 @@ static OSStatus	PerformThru(
 
 - (void)dealloc
 {
-	delete[] dcFilter;    
-	[super dealloc];
+	delete[] dcFilter;
 }
 
 - (void)computeWave
@@ -329,7 +332,7 @@ static OSStatus	PerformThru(
         {
             [[WaveListener sharedWaveListener] setListening:NO];
             
-            UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:resultCode message:nil delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil] autorelease];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:resultCode message:nil delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil];
             [alertView show];
         }
     }

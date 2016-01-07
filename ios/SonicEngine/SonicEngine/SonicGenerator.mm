@@ -49,7 +49,7 @@
     
     free(wave_buffer);
     
-    return [chirpData autorelease];
+    return chirpData;
 }
 
 
